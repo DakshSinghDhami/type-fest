@@ -8,8 +8,7 @@ expectType<true>({} as IsEqual<'foo', 'foo'>);
 expectType<false>({} as IsEqual<true, false>);
 expectType<true>({} as IsEqual<false, false>);
 
-// Test for Issue https://github.com/sindresorhus/type-fest/issues/1442
-// number and bigint are distinct types in TypeScript and JavaScript (===)
+// Number and bigint are distinct types.
 expectType<false>({} as IsEqual<100, 100n>);
 expectType<false>({} as IsEqual<number, bigint>);
 expectType<false>({} as IsEqual<42, 42n>);
